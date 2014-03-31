@@ -2,7 +2,7 @@
 
 <ul>
   <% @tasks.each do |task| %>
-    <li>Task: <%=task.description%>
+    <li><a href="/tasks/<%=task.id%>">Task: <%=task.description%></a>
       <ul>
         <li>Due Date: <%=task.due_date%></li>
         <li>Priority: <%=task.priority%></li>

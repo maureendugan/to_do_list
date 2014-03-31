@@ -6,4 +6,9 @@
   <li>Done: <%= if @task.done? then "Yep" else "Nope" end %></li>
 </ul>
 
+<p><a href="/tasks/<%=@task.id%>/edit">Edit this task.</a></p>
+<p><a href="/tasks/<%= @task.id%>"
+            data-confirm="You sure?"
+            data-method="delete"
+            rel="nofollow">Delete</a></p>
 <p><a href="/tasks">Return to To Do list.</a></p>
