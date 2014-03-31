@@ -1,0 +1,16 @@
+<h1>To Do List</h1>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li>Task: <%=task.description%>
+      <ul>
+        <li>Due Date: <%=task.due_date%></li>
+        <li>Priority: <%=task.priority%></li>
+        <li>Done: <%= if task.done? then "Yep" else "Nope" end %></li>
+        <br>
+      </ul>
+    </li>
+  <% end %>
+</ul>
+
+<p><a href="/tasks/new">Create a new task</a></p>

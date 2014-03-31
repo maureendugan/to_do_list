@@ -1,0 +1,9 @@
+<h1><%= @task.description %></h1>
+
+<ul>
+  <li>Due Date: <%=@task.due_date%></li>
+  <li>Priority: <%=@task.priority%></li>
+  <li>Done: <%= if @task.done? then "Yep" else "Nope" end %></li>
+</ul>
+
+<p><a href="/tasks">Return to To Do list.</a></p>
