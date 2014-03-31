@@ -19,7 +19,8 @@ class TasksController < ApplicationController
   end
 
   def index
-    @tasks = Task.all
+    @done_tasks = Task.done_tasks
+    @not_done_tasks = Task.not_done_tasks
     render('tasks/index.html.erb')
   end
 
@@ -37,8 +38,13 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     if @task.update(  :description => params[:description],
                       :due_date => params[:due_date],
-                      :priority => params[:priority])
-      render('tasks/success.html.erb')
+                      :priority => params[:priority],
+                      :done? => params[:done?])
+      if @task.done?
+        redirect_to :back
+      else
+        render('tasks/success.html.erb')
+      end
     else
       render('tasks/edit.html.erb')
     end
