@@ -6,4 +6,9 @@ ToDoList::Application.routes.draw do
   match('tasks/:id/edit', {:via => :get, :to => 'tasks#edit'})
   match('tasks/:id', {:via => [:patch, :put], :to => 'tasks#update'})
   match('tasks/:id', {:via => :delete, :to => 'tasks#destroy'})
+
+  match('lists', {:via => :get, :to => 'lists#index'})
+  match('lists', {:via =>:post, :to => 'lists#create'})
+  match('lists/new', {:via => :get, :to => 'lists#new'})
+  match('lists/:id', {:via => :get, :to => 'lists#show'})
 end

@@ -1,0 +1,11 @@
+<h1>Lists</h1>
+
+<ul>
+  <% @lists.each do |list| %>
+    <li><a href="/lists/<%= list.id%>"><%=list.name%></a></li>
+  <% end %>
+</u>
+
+<form action="lists/new" method="get">
+  <button>Create a new list</button>
+</form>

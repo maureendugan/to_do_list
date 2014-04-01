@@ -13,8 +13,12 @@
   <label for='task_description'>Description</label>
   <input id='task_description' name='description' type='text' value="<%= @task.description %>">
   <label for='task_due_date'>Due Date</label>
-  <input id='task_due_date' name='due_date' type='text' value="<%= @task.due_date %>">
+  <input id='task_due_date' name='due_date' type='date' value="<%= @task.due_date %>">
   <label for='task_priority'>Priority</label>
-  <input id='task_priority' name='priority' type='integer' value="<%= @task.priority %>">
+  <select id='task_priority' name='priority'>
+    <option value=1>One</option>
+    <option value=2>Two</option>
+    <option value=3>Three</option>
+  </select>
   <button>Add Task</button>
 </form>

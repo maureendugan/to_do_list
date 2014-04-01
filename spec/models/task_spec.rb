@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe Task do
   it { should validate_presence_of :description }
+  it { should belong_to :list}
 
   describe '.done_tasks' do
     it 'returns an array of completed tasks (done? == true)' do
